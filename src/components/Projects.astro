@@ -1,0 +1,83 @@
+---
+import ReactIcon from "../components/icons/ReactIcon.astro";
+import NextJSIcon from "../components/icons/NextJSIcon.astro";
+import TypeScriptIcon from "../components/icons/TypeScriptIcon.astro";
+import TailwindIcon from "../components/icons/TailwindIcon.astro";
+import WorldIcon from "./icons/WorldIcon.astro";
+import Button from "../components/Button.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+
+const TAGS = {
+  REACT: {
+    name: "React",
+    class: "bg-[#07a0bc]",
+    icon: ReactIcon,
+  },
+  NEXTJS: {
+    name: "NextJS",
+    class: "bg-black border border-gray-800/60",
+    icon: NextJSIcon,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-[#3676bc]",
+    icon: TypeScriptIcon,
+  },
+  TAILWINDCSS: {
+    name: "Tailwind CSS",
+    class: "bg-[#1fadaf]",
+    icon: TailwindIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Pimp My Room! - replicate jagilley-controlnet-hough project",
+    description:
+      "Input an image, and prompt the model to generate an image as you would. Detecting edges in an input image in addition to a text input to generate an output image.",
+    link: "",
+    github:
+      "https://github.com/martinmilani/replicate-jagilley-controlnet-hough",
+    image: "./projects/replicate.webp",
+    tags: [TAGS.REACT, TAGS.NEXTJS, TAGS.TYPESCRIPT, TAGS.TAILWINDCSS],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ image, title, description, tags, github, link }) => (
+    <article class="flex flex-col md:flex-row md:items-start md:gap-x-8">
+      <img
+        class="rounded-xl mb-8 md:w-1/2"
+        src={image}
+        alt={`Poject ${image} screenshoot`}
+      />
+      <div class="md:w-1/2">
+        <h3 class="text-2xl font-bold text-dracula-purple mb-3">{title}</h3>
+        <ul class="flex gap-x-1 flex-row flex-wrap gap-y-1 my-3">
+          {tags.map((tag) => (
+            <li>
+              <span class="text-xs font-base me-2 px-2.5 py-0.5 rounded-full bg-gray-800 text-dracula-foreground inline-flex justify-center items-center gap-x-1">
+                <tag.icon class="size-5" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p class="mb-4 text-pretty text-gray-400">{description}</p>
+        <div class="flex flex-row justify-end gap-x-4">
+          <Button href={github}>
+            <GitHubIcon class="size-6" />
+            Code
+          </Button>
+          {link && (
+            <Button href={link}>
+              <WorldIcon class="size-6" />
+              Preview
+            </Button>
+          )}
+        </div>
+      </div>
+    </article>
+  ))
+}

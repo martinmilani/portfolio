@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "01/2022 - Actually",
+    title: "Frontend Developer",
+    company: "Avalith",
+    description:
+      "As a Frontend Developer, I contributed to the success of several internal clients using React by enhancing components, troubleshooting, and refining UX/UI, including mobile optimization with React Native.",
+  },
+  {
+    date: "06/2021 - 09/2021",
+    title: "Trainee Frontend Developer",
+    company: "Alkemy",
+    description:
+      "In a fast-paced environment, I collaborated with a team of 6 developers using SCRUM, BitBucket, and Jira. Developed functional software for an NGO, including route implementation, view design, API integration, and state management with React and agile methodologies.",
+  },
+];
+---
+
+<ol class="relative border-s-2 border-gray-200/20 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

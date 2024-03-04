@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import BriefcaseIcon from "../components/icons/BriefcaseIcon.astro";
+
+import CodeIcon from "../components/icons/CodeIcon.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<Layout
+  title="Martin's Portfolio"
+  description="Hire me for your next web project."
+>
+  <main class="px-4" id="home">
+    <SectionContainer class="pt-36 pb-32">
+      <Hero />
+    </SectionContainer>
+
+    <SectionContainer id="experience">
+      <h2 class="text-3xl font-semibold mb-16 flex gap-x-3 items-center">
+        <BriefcaseIcon class="size-7" />
+        Work Experience
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="projects">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7" />
+        Projects
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="about">
+      <h2 class="">About Me</h2>
+    </SectionContainer>
+  </main>
+</Layout>
