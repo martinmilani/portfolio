@@ -7,6 +7,7 @@ import TypeScriptIcon from "../components/icons/TypeScriptIcon.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
 import CssIcon from "./icons/CssIcon.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
+import Gsap from "./icons/Gsap.astro";
 import HtmlIcon from "./icons/HtmlIcon.astro";
 import JavaScriptIcon from "./icons/JavaScriptIcon.astro";
 import WorldIcon from "./icons/WorldIcon.astro";
@@ -44,28 +45,34 @@ const TAGS = {
     name: "Astro",
     icon: AstroIcon,
   },
+  GSAP: {
+    name: "GSAP",
+    icon: Gsap,
+  },
+  SCROLLTRIGGER: {
+    name: "ScrollTrigger",
+    icon: AstroIcon,
+  },
 };
 
 const PROJECTS = [
-{
+  {
     title: "rEFInd Themes Collection",
     description:
       "A small collection of refind themes from github's that allow you to effortlessly chose your favorite and style your linux boot manager.",
     link: "https://refind-themes-collection.netlify.app/",
-    github:
-      "https://github.com/martinmilani/rEFInd-theme-collection",
+    github: "https://github.com/martinmilani/rEFInd-theme-collection",
     image: "./projects/refind_collection.webp",
     tags: [TAGS.ASTRO, TAGS.TYPESCRIPT, TAGS.TAILWINDCSS],
   },
   {
-    title: "Pimp My Room! - replicate jagilley-controlnet-hough project",
+    title: "Night Sky Experiences",
     description:
-      "Input an image, and prompt the model to generate an image as you would. Detecting edges in an input image in addition to a text input to generate an output image.",
-    link: "",
-    github:
-      "https://github.com/martinmilani/replicate-jagilley-controlnet-hough",
-    image: "./projects/pimp-my-room.webp",
-    tags: [TAGS.REACT, TAGS.NEXTJS, TAGS.TYPESCRIPT, TAGS.TAILWINDCSS],
+      "A modern, animated web experience featuring a beautiful night sky theme and interactive card-based content.",
+    link: "https://effervescent-horse-ab20b0.netlify.app/",
+    github: "https://github.com/martinmilani/nightsky",
+    image: "./projects/nightsky.webp",
+    tags: [TAGS.ASTRO, TAGS.GSAP, TAGS.TAILWINDCSS],
   },
   {
     title: "JavaScript Game Development",
@@ -82,11 +89,7 @@ const PROJECTS = [
 {
   PROJECTS.map(({ image, title, description, tags, github, link }) => (
     <article class="flex flex-col md:flex-row md:items-start md:gap-x-8 mb-8">
-      <img
-        class="rounded-xl mb-8 md:w-1/2"
-        src={image}
-        alt={`Poject ${image} screenshoot`}
-      />
+      <img class="rounded-xl mb-8 md:w-1/2" src={image} alt={`Poject ${image} screenshoot`} />
       <div class="md:w-1/2">
         <h3 class="text-2xl font-bold text-dracula-purple mb-3">{title}</h3>
         <ul class="flex gap-x-1 flex-row flex-wrap gap-y-1 my-3">

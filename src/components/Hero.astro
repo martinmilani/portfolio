@@ -1,9 +1,8 @@
 ---
-import Badge from "./Badge.astro";
-import LinkedinIcon from "./icons/LinkedinIcon.astro";
-import SocialPill from "./SocialPill.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
 import MailIcon from "./icons/MailIcon.astro";
+import SocialPill from "./SocialPill.astro";
 ---
 
 <div class="flex flex-row gap-x-4 items-center pb-6">
@@ -23,23 +22,21 @@ import MailIcon from "./icons/MailIcon.astro";
 <h2
   class="my-8 text-xl [&>strong]:text-dracula-purple [&>strong]:font-semibold text-gray-300 text-pretty"
 >
-  <strong>+2 years experienced web developer</strong> proficient in <strong
-    >JavaScript, React, HTML and CSS,</strong
-  > Specialized in creating seamless user interfaces and implementing UI/UX designs
-  to deliver exceptional user experiences.
-</h2>
+  I'm implementing interfaces and features in <strong>JavaScript, React, HTML and CSS. </strong> for
+  over 3 years.
 
-<nav class="flex gap-4 mt-8 flex-wrap">
-  <SocialPill href="https://www.linkedin.com/in/martin-milani-mdq/">
-    <LinkedinIcon class="size-4 md:size-6" />
-    Linkedin
-  </SocialPill>
-  <SocialPill href="https://github.com/martinmilani">
-    <GitHubIcon class="size-4 md:size-6" />
-    GitHub
-  </SocialPill>
-  <SocialPill href="mailto:<EMAIL>">
-    <MailIcon class="size-4 md:size-6" />
-    Contact me
-  </SocialPill>
-</nav>
+  <nav class="flex gap-4 mt-8 flex-wrap">
+    <SocialPill href="https://www.linkedin.com/in/martin-milani-mdq/">
+      <LinkedinIcon class="size-4 md:size-6" />
+      Linkedin
+    </SocialPill>
+    <SocialPill href="https://github.com/martinmilani">
+      <GitHubIcon class="size-4 md:size-6" />
+      GitHub
+    </SocialPill>
+    <SocialPill href="mailto:<EMAIL>">
+      <MailIcon class="size-4 md:size-6" />
+      Contact me
+    </SocialPill>
+  </nav>
+</h2>
